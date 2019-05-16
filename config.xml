@@ -7,10 +7,11 @@
   <info>
     <name>CEREQ</name>
     <guid>16354106-18e9-4373-bdcd-bc343be6ec49</guid>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <date>2019-04-09</date>
     <description><![CDATA[
-      v1.0.3 - Added the new mobile view logo
+      	v1.0.3 - Added the new mobile view logo
+		v1.0.4 - Reduced to 70px the height of header on mobile view
       ]]></description>
     <company>Askia</company>
     <author><![CDATA[Prabath Gamage<prabath@askia.com>]]></author>
