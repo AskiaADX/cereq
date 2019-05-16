@@ -7,9 +7,11 @@
   <info>
     <name>CEREQ</name>
     <guid>16354106-18e9-4373-bdcd-bc343be6ec49</guid>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <date>2019-04-09</date>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[
+      v1.0.3 - Added the new mobile view logo
+      ]]></description>
     <company>Askia</company>
     <author><![CDATA[Prabath Gamage<prabath@askia.com>]]></author>
     <site></site>
@@ -25,6 +27,7 @@
       <content fileName="logo_gene_vf.png" type="image" mode="static" position="none" />
       <content fileName="logo_gene_vf@2x.png" type="image" mode="static" position="none" />
       <content fileName="logo_gene_vf@3x.png" type="image" mode="static" position="none" />
+      <content fileName="logo_gene_mobile.png" type="image" mode="static" position="none" />
       <content fileName="askia.ajax.min.js" type="javascript" mode="static" position="head" />
       <content fileName="ibmplexsans.css" type="css" mode="static" position="head" />
       <content fileName="ibm-plex-sans.regular.ttf" type="binary" mode="static" position="none" />
