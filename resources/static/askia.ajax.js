@@ -311,6 +311,7 @@
     var itemAction;
     var eventName;
     clearLiveErrors();
+    askia.triggerEvent('askiaClearLiveErrors');
     for (i = 0, l = actions.length; i < l; i += 1) {
       itemAction = actions[i];
       eventName = 'askia' + capitalize(itemAction.action);
