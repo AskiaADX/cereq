@@ -17,11 +17,11 @@ Dim responsiveWidth = CurrentADP.Var("responsive_width")
 'Theme
 Dim WhiteColor = Theme.WhiteColor
 Dim BlackColor = Theme.BlackColor
-Dim PrimaryColor = "86, 86, 86, 1"
-Dim PrimaryDarkColor = "62,62,62,1"
-Dim PrimaryLightColor = "187, 187, 187, 1"
-Dim SecondaryColor = "242, 183, 59, 1"
-Dim SecondaryDarkColor = "182,126,12,1"
+Dim PrimaryColor = Theme.PrimaryColor
+Dim PrimaryDarkColor = Theme.PrimaryDarkColor
+Dim PrimaryLightColor = Theme.PrimaryLightColor
+Dim SecondaryColor = Theme.SecondaryColor
+Dim SecondaryDarkColor = Theme.SecondaryDarkColor
 Dim FontFamily = "IBM Plex Sans"
 Dim BaseFS = "18px"
 Dim LargeFS = "34px"
