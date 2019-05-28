@@ -7,11 +7,13 @@
   <info>
     <name>CEREQ</name>
     <guid>16354106-18e9-4373-bdcd-bc343be6ec49</guid>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
     <date>2019-04-09</date>
     <description><![CDATA[v1.0.3 - Added the new mobile view logo
 		v1.0.4 - Reduced to 70px the height of header on mobile view
-		v1.0.5 - Fixed Theme color]]></description>
+		v1.0.5 - Fixed Theme color
+    v1.0.6 - Infobulle changed
+    ]]></description>
     <company>Askia</company>
     <author><![CDATA[Prabath Gamage<prabath@askia.com>]]></author>
     <site></site>
@@ -22,6 +24,7 @@
       <description><![CDATA[Default output]]></description>
       <content fileName="askia.live.routing.js" type="javascript" mode="dynamic" position="head" />
       <content fileName="askia.ajax.min.js" type="javascript" mode="static" position="foot" />
+      <content fileName="jquery.min.js" type="javascript" mode="static" position="head" />
       <content fileName="style.css" type="css" mode="dynamic" position="head" />
       <content fileName="default.css" type="css" mode="static" position="head" />
       <content fileName="logo_gene_vf.png" type="image" mode="static" position="none" />
@@ -33,6 +36,7 @@
       <content fileName="ibm-plex-sans.regular.ttf" type="binary" mode="static" position="none" />
       <content fileName="fontawesome.css" type="css" mode="static" position="head" />
       <content fileName="fontawesome.js" type="javascript" mode="static" position="head" />
+      <content fileName="tooltip.js" type="javascript" mode="static" position="foot" />      
     </output>
   </outputs>
   <properties>

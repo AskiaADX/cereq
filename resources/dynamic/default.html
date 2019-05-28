@@ -58,6 +58,8 @@
 
                         </div>
                         <askia-questions />
+                        <!-- <div class="infobulle"><i class="fas fa-info-circle info_icon"></i><span class="infobulle_text"><b>BEES :</b> Brevet d’état éducateur sportif</span></div> -->
+                        <!-- <abbr title="<b>BEES :</b> Brevet d’état éducateur sportif<br>" rel="tooltip"><i class="fas fa-info-circle info_icon"></i></abbr> -->
                     </div>
                     <div class="adc-footer">
                         {% If CurrentADP.Var("display_previous") = True Then %}
@@ -121,7 +123,18 @@
                         document.getElementsByClassName('que-wrapper')[0].style.marginTop = "8vh !important";
                     }
                 }
+                var infobulles = document.querySelectorAll(".infobulle");
+                var infobulleTexts = document.querySelectorAll(".infobulle_text");
 
+                console.log('before loop');
+
+                for (var i = 0; i < infobulles.length; i++) {
+                  console.log(infobulles[i].offsetLeft + ' : ' + infobulles[i].childNodes[1].offsetWidth);
+                  // console.log(infobulles[i].offsetWidth);
+
+                  // var styleElem = document.head.appendChild(document.createElement("style"));
+                  // styleElem.innerHTML = "#theDiv:before {background: black;}";
+                }
             }
         </script>
         <askia-foot />

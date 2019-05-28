@@ -490,12 +490,7 @@ input[type=week]:hover {
     box-shadow: 0 2px 5px rgba({%= BlackColor.ToRGB() %}, 0.3);
 }
 
-@media screen and (min-width: 501px) and (max-width: 768px) {
-
-}
-
-/* infobulle style */
-.infobulle {
+/* .infobulle {
   margin-top: 20px;
   position: relative;
   display: inline-block;
@@ -506,8 +501,6 @@ input[type=week]:hover {
   visibility: hidden;
   min-width: 200px;
   min-height: 51px;
-  /* max-height: 400px;
-  overflow-y: scroll; */
   top: -25.5px;
   right: 200%;
   padding: 8px;
@@ -523,18 +516,14 @@ input[type=week]:hover {
   letter-spacing: normal;
   text-align: left;
   color: #ffffff;
-
-  /* Position the tooltip */
   position: absolute;
   z-index: 1;
-
 }
 .infobulle .infobulle_text::after {
   content: " ";
   position: absolute;
   top: 35.5px;
-  left: 100%; /* To the right of the tooltip */
-
+  left: 100%;
   margin-top: -10px;
   border-width: 11px;
   border-style: solid;
@@ -545,9 +534,64 @@ input[type=week]:hover {
 }
 .infobulle .info_icon {
 	color:#595959;font-size:20px
+} */
+
+/* Tooltip style */
+#tooltip {
+    text-align: center;
+    color: #fff;
+    background: #595959;
+    position: absolute;
+    z-index: 100;
+    padding: 8px;
+    border-radius: 2px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #595959;
+    font-family: IBM Plex Sans;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 15px;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
 }
 
+#tooltip:after /* triangle decoration */ {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #595959;
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    margin-left: -10px;
+}
+
+#tooltip.top:after {
+    border-top-color: transparent;
+    border-bottom: 10px solid #595959;
+    top: -20px;
+    bottom: auto;
+}
+
+#tooltip.left:after {
+    left: 10px;
+    margin: 0;
+}
+
+#tooltip.right:after {
+    right: 10px;
+    left: auto;
+    margin: 0;
+}
+
+/* Tooltip style end */
 @media screen and (max-width: {%=responsiveWidth %}px) {
+
 .askia-errors-summary,
 .askia-live-errors-summary div {
     width: 90%;
@@ -593,7 +637,7 @@ input[type=week]:hover {
 .logo-gene_vf {
   display: none;
 }
-.logo-gene_mobile{
+.logo-gene_mobile {
   display: inline;
   width: auto;
   height: 70px;
@@ -644,17 +688,15 @@ input[type=week]:hover {
   font-size: {%= NormalFS %};
 }
 
-.infobulle .infobulle_text {
-  /* mobile */
+/* .infobulle .infobulle_text {
   right: auto;
   left: 40px;
-  /*  */
 }
-.infobulle .infobulle_text::after {
-top: 35.5px;
-left:auto;
-right: 100%;
-border-color: transparent #595959 transparent transparent;
-}
+.infobulle{
+  top: 35.5px;
+  left:auto;
+  right: 100%;
+  border-color: transparent #595959 transparent transparent;
+} */
 
 }
