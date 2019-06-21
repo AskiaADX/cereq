@@ -7,7 +7,7 @@
   <info>
     <name>CEREQ</name>
     <guid>16354106-18e9-4373-bdcd-bc343be6ec49</guid>
-    <version>1.0.6</version>
+    <version>1.0.8</version>
     <date>2019-04-09</date>
     <description><![CDATA[v1.0.3 - Added the new mobile view logo
 		v1.0.4 - Reduced to 70px the height of header on mobile view
@@ -36,7 +36,7 @@
       <content fileName="ibm-plex-sans.regular.ttf" type="binary" mode="static" position="none" />
       <content fileName="fontawesome.css" type="css" mode="static" position="head" />
       <content fileName="fontawesome.js" type="javascript" mode="static" position="head" />
-      <content fileName="tooltip.js" type="javascript" mode="static" position="foot" />      
+      <content fileName="tooltip.js" type="javascript" mode="static" position="foot" />
     </output>
   </outputs>
   <properties>
@@ -45,9 +45,21 @@
         <description><![CDATA[Title of the window]]></description>
         <value><![CDATA[Askia Web Survey]]></value>
       </property>
-      <property xsi:type="standardProperty" id="display_previous" name="Display previous" type="boolean" require="true">
+      <property xsi:type="standardProperty" id="display_previous" name="Display previous" type="string" require="true">
         <description><![CDATA[Display previous button]]></description>
-        <value><![CDATA[true]]></value>
+        <value><![CDATA[yes]]></value>
+        <options>
+          <option value="yes" text="Yes" />
+          <option value="no" text="No" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="activate_next" name="Activate next" type="string" require="true">
+        <description><![CDATA[Activate next button]]></description>
+        <value><![CDATA[yes]]></value>
+        <options>
+          <option value="yes" text="Yes" />
+          <option value="no" text="No" />
+        </options>
       </property>
     </category>
     <category id="menu" name="Menu">

@@ -53,7 +53,7 @@
                         <div class="askia-errors-summary">
                             <!--insert errors here -->
                         </div>
-                        {% End If %}
+                        {% EndIf %}
                         <div class="askia-live-errors-summary">
 
                         </div>
@@ -62,12 +62,12 @@
                         <!-- <abbr title="<b>BEES :</b> Brevet d’état éducateur sportif<br>" rel="tooltip"><i class="fas fa-info-circle info_icon"></i></abbr> -->
                     </div>
                     <div class="adc-footer">
-                        {% If CurrentADP.Var("display_previous") = True Then %}
-                        <div class="previous-button" onclick="$('.in-previous-button').click()"><i class="fas fa-arrow-left"></i><span>pr&eacute;c&eacute;dent</span></div>
+                        {% If CurrentADP.Var("display_previous") = "yes" Then %}
+                        <div class="previous-button"><i class="fas fa-arrow-left"></i><span>pr&eacute;c&eacute;dent</span></div>
                         <input type="submit" name="Previous" class="in-previous-button" value="" />
-                        {% End If %}
+                        {% EndIf %}
 
-                        <div class="next-button" onclick="$('.in-next-button').click()"><span>suivant</span><i class="fas fa-arrow-right"></i></div>
+                        <div class="next-button"><span>suivant</span><i class="fas fa-arrow-right"></i></div>
                         <input type="submit" name="Next" class="in-next-button" value="" />
                     </div>
                     <p class="bottom-text-main">{%:= CurrentADP.Var("bottom_text")%}</p>
@@ -80,7 +80,7 @@
 
             {% If (errors_caption <> "") Then  %}
             errorUL = "<p>{%:= errors_caption %}</p>";
-            {% End If %}
+            {% EndIf %}
 
             errorUL = errorUL + "<ul>";
 
@@ -113,6 +113,16 @@
                 document.getElementsByClassName('social-m-ico')[0].addEventListener('click', function (event) {
                     window.open('{%:= socialNetworkURL %}', '_blank');
                 });
+                {% If CurrentADP.Var("display_previous") = "yes" Then %}
+                document.querySelector('.previous-button').addEventListener("click", function(event){
+                    document.querySelector('.in-previous-button').click();
+                },false);
+                {% EndIf %}
+                {% If CurrentADP.Var("activate_next") = "yes" Then %}
+                document.querySelector('.next-button').addEventListener("click", function(event){
+                    document.querySelector('.in-next-button').click();
+                },false);
+                {% EndIf %}
             });
 
             window.onload = function(){
