@@ -63,11 +63,11 @@
                     </div>
                     <div class="adc-footer">
                         {% If CurrentADP.Var("display_previous") = "yes" Then %}
-                        <div class="previous-button"><i class="fas fa-arrow-left"></i><span>pr&eacute;c&eacute;dent</span></div>
+                        <div class="previous-button"><i class="fas fa-arrow-left"></i><span>{%= CurrentADP.Var("caption_previous") %}</span></div>
                         <input type="submit" name="Previous" class="in-previous-button" value="" />
                         {% EndIf %}
 
-                        <div class="next-button"><span>suivant</span><i class="fas fa-arrow-right"></i></div>
+                        <div class="next-button"><span>{%= CurrentADP.Var("caption_next") %}</span><i class="fas fa-arrow-right"></i></div>
                         <input type="submit" name="Next" class="in-next-button" value="" />
                     </div>
                     <p class="bottom-text-main">{%:= CurrentADP.Var("bottom_text")%}</p>

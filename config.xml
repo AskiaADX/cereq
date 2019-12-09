@@ -7,12 +7,13 @@
   <info>
     <name>CEREQ</name>
     <guid>16354106-18e9-4373-bdcd-bc343be6ec49</guid>
-    <version>1.0.8</version>
+    <version>1.0.9</version>
     <date>2019-04-09</date>
     <description><![CDATA[v1.0.3 - Added the new mobile view logo
 		v1.0.4 - Reduced to 70px the height of header on mobile view
 		v1.0.5 - Fixed Theme color
-    v1.0.6 - Infobulle changed
+	    v1.0.6 - Infobulle changed
+		v1.0.9 - Added previous and next caption
     ]]></description>
     <company>Askia</company>
     <author><![CDATA[Prabath Gamage<prabath@askia.com>]]></author>
@@ -53,6 +54,10 @@
           <option value="no" text="No" />
         </options>
       </property>
+      <property xsi:type="standardProperty" id="caption_previous" name="Previous caption" type="string" require="true">
+        <description><![CDATA[Caption of the previous button]]></description>
+        <value><![CDATA[précédent]]></value>
+      </property>
       <property xsi:type="standardProperty" id="activate_next" name="Activate next" type="string" require="true">
         <description><![CDATA[Activate next button]]></description>
         <value><![CDATA[yes]]></value>
@@ -60,6 +65,10 @@
           <option value="yes" text="Yes" />
           <option value="no" text="No" />
         </options>
+      </property>
+      <property xsi:type="standardProperty" id="caption_next" name="Next caption" type="string" require="true">
+        <description><![CDATA[Caption of the next button]]></description>
+        <value><![CDATA[suivant]]></value>
       </property>
     </category>
     <category id="menu" name="Menu">
@@ -125,8 +134,8 @@
       </property>
       <property xsi:type="standardProperty" id="bottom_text" name="Bottom text" type="string" mode="dynamic" require="true" visible="true">
         <description><![CDATA[Text to be appeared on the bottom]]></description>
-        <value><![CDATA[Conform&eacute;ment au code d&eacute;ontologie qui r&eacute;git sa profession,
-          M&eacute;diam&eacute;trie garantit le strict anonymat de vos r&eacute;ponses qui ne seront utilis&eacute;es qu&rsquo;&agrave; des fins statistiques.]]></value>
+        <value><![CDATA[Conformeacute;ment au code deacute;ontologie qui reacute;git sa profession,
+          Meacute;diameacute;trie garantit le strict anonymat de vos reacute;ponses qui ne seront utiliseacute;es qursquo;agrave; des fins statistiques.]]></value>
       </property>
       <property xsi:type="standardProperty" id="bottom_text_font_size" name="Bottom text font size(px)" type="number" mode="dynamic" require="true" visible="true">
         <description><![CDATA[Bottom text font size]]></description>
