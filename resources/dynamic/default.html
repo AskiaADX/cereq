@@ -15,11 +15,28 @@
             </div>
             <div class="list-menu">
                 {%
-                Dim mlist = CurrentADP.Var("menu_items").ToString().Split()
-                Dim x = CurrentADP.Var("active_menu_item")
+                Dim mlist = CurrentADP.Var("menu_items").ToString().Split(",")
                 Dim socialMediaIconColor = CurrentADP.Var("social_media_icon_color")
                 Dim socialNetworkURL = CurrentADP.Var("social_network_url")
-                Dim activeMenuItem = 1
+				Dim currentChapter = ""
+				dim highestQuestion = CurrentQuestions[1]
+dim temphighestquestion
+				Dim maxquestionlevel = 4
+dim levelcounter=1
+for levelcounter=1 to maxquestionlevel
+    IF highestQuestion.HasParentChapter then
+        temphighestquestion=highestQuestion.ParentChapter
+        highestQuestion=temphighestquestion
+    else break
+    endif
+next levelcounter
+
+currentChapter = highestQuestion.LongCaption.Split("-")[1]
+dim x = highestQuestion.LongCaption.Split("-")[2].Trim().ToNumber()
+
+    
+    
+    
                 Dim errors_caption = ""
                 Dim i = 1
                 If mlist.count > 0 Then
@@ -49,6 +66,7 @@
             <askia-form>
                 <div class="adc-wrapper">
                     <div class="que-wrapper">
+                        <div class="moduletitle"> {%= currentChapter %}</div>
                         {% If CurrentQuestions.Errors.Count Then %}
                         <div class="askia-errors-summary">
                             <!--insert errors here -->

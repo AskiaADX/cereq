@@ -325,7 +325,7 @@ body, html {
 }
 
 .askia-radio, .askia-checkbox {
-  float: left !important;
+  float: none !important;
 }
 
 .askia-grid-row > td >.askia-radio, .askia-grid-row > td > .askia-checkbox {
@@ -488,6 +488,14 @@ input[type=week]:hover {
 }
 .secondary.disabled:hover {
     box-shadow: 0 2px 5px rgba({%= BlackColor.ToRGB() %}, 0.3);
+}
+
+.moduletitle{
+    font-family: {%= FontFamily %};
+    font-size: {%= LargeFS %};
+    border-radius: {%= BorderRadius %};
+    padding: {%= VPadding %} 0;
+    color: rgba({%=NeutralDarkColor %});
 }
 
 /* .infobulle {
