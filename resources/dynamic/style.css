@@ -4,8 +4,14 @@ Dim menuBackgroundColor = CurrentADP.Var("menu_background_color")
 Dim menuFontColor = CurrentADP.Var("menu_font_color")
 Dim menuSelectFontColor = CurrentADP.Var("menu_selected_font_color")
 Dim menuSelectPipColor = CurrentADP.Var("menu_selected_pip_color")
+
 Dim showSocialMediaIcon = CurrentADP.Var("show_social_media_icon")
 Dim socialMediaIconBackgroundColor = CurrentADP.Var("social_media_icon_background_color")
+Dim showEmailIcon = CurrentADP.Var("show_email_icon")
+Dim emailIconBackgroundColor = CurrentADP.Var("email_icon_background_color")
+Dim showPhoneIcon = CurrentADP.Var("show_phone_icon")
+Dim phoneIconBackgroundColor = CurrentADP.Var("phone_icon_background_color")
+
 Dim showLogoBottomBorder = CurrentADP.Var("show_logo_bottom_line")
 Dim logoTopMargin = CurrentADP.Var("logo_top_margin")
 Dim logoBottomMargin = CurrentADP.Var("logo_bottom_margin")
@@ -135,17 +141,52 @@ body {
   {% If showSocialMediaIcon = "no" Then %}
       display: none;
   {% EndIf %}
-  padding-left: 44%;
   margin-bottom: 50px;
 }
 .social-m-ico {
-  width: 29.4px;
+  width: 45.4px;
   height: 45.4px;
   background-color: rgba({%:=socialMediaIconBackgroundColor %});
   display: flex;
   /* text-align: center; */
   align-items: center;
-  padding-left: 16px;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.email-ico-wrap {
+  {% If showEmailIcon = "no" Then %}
+      display: none;
+  {% EndIf %}
+  margin-bottom: 50px;
+}
+.email-ico {
+  width: 45.4px;
+  height: 45.4px;
+  background-color: rgba({%:=emailIconBackgroundColor %});
+  display: flex;
+  /* text-align: center; */
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.phone-ico-wrap {
+  {% If showPhoneIcon = "no" Then %}
+      display: none;
+  {% EndIf %}
+  margin-bottom: 50px;
+}
+.phone-ico {
+  width: 45.4px;
+  height: 45.4px;
+  background-color: rgba({%:=phoneIconBackgroundColor %});
+  display: flex;
+  /* text-align: center; */
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -156,6 +197,24 @@ body {
   bottom: 0;
   padding: 10px;
 }
+.contact-buttons{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 30px;
+}
+
+.resume-button{
+  display: block;
+  position:absolute;
+  bottom:20px;
+  right:20px;
+  border-radius: 5px;
+    background-color: #EAAE31;
+    color: #FAFAFA;
+    text-decoration: none;
+    font-size: 12px;
+}
+
 .bottom-text,
 .bottom-text-main {
   height: 38.2px;

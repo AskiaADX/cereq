@@ -15,28 +15,38 @@
             </div>
             <div class="list-menu">
                 {%
+                ' Get current chapter
                 Dim mlist = CurrentADP.Var("menu_items").ToString().Split(",")
+                Dim currentChapter = ""
+                dim highestQuestion = CurrentQuestions[1]
+                dim temphighestquestion
+                Dim maxquestionlevel = 4
+                dim levelcounter=1
+                for levelcounter=1 to maxquestionlevel
+                  IF highestQuestion.HasParentChapter then
+                    temphighestquestion=highestQuestion.ParentChapter
+                    highestQuestion=temphighestquestion
+                  else break
+                  endif
+                next levelcounter
+
+                currentChapter = highestQuestion.LongCaption.Split("-")[1]
+                dim x = highestQuestion.LongCaption.Split("-")[2].Trim().ToNumber()
+
+                ' Icons
                 Dim socialMediaIconColor = CurrentADP.Var("social_media_icon_color")
                 Dim socialNetworkURL = CurrentADP.Var("social_network_url")
-				Dim currentChapter = ""
-				dim highestQuestion = CurrentQuestions[1]
-dim temphighestquestion
-				Dim maxquestionlevel = 4
-dim levelcounter=1
-for levelcounter=1 to maxquestionlevel
-    IF highestQuestion.HasParentChapter then
-        temphighestquestion=highestQuestion.ParentChapter
-        highestQuestion=temphighestquestion
-    else break
-    endif
-next levelcounter
+                Dim socialMediaIcon = CurrentADP.Var("social_media_icon")
+                Dim socialMediaTooltip = CurrentADP.Var("social_media_tooltip")
+                Dim emailIconColor = CurrentADP.Var("email_icon_color")
+                Dim emailAddress = CurrentADP.Var("email_address")
+                Dim emailIcon = CurrentADP.Var("email_icon")
+                Dim emailTooltip = CurrentADP.Var("email_tooltip")
+                Dim phoneIconColor = CurrentADP.Var("phone_icon_color")
+                Dim phoneNumber = CurrentADP.Var("phone_number")
+                Dim phoneIcon = CurrentADP.Var("phone_icon")
+                Dim phoneTooltip = CurrentADP.Var("phone_tooltip")
 
-currentChapter = highestQuestion.LongCaption.Split("-")[1]
-dim x = highestQuestion.LongCaption.Split("-")[2].Trim().ToNumber()
-
-    
-    
-    
                 Dim errors_caption = ""
                 Dim i = 1
                 If mlist.count > 0 Then
@@ -56,9 +66,18 @@ dim x = highestQuestion.LongCaption.Split("-")[2].Trim().ToNumber()
                 {% EndIf %}
             </div>
             <div class="bottom-text-wrap">
-                <div class="social-m-ico-wrap">
-                    <div class="social-m-ico"><i class="fab fa-facebook-f" style="font-size:1.3em;color:rgba({%:=socialMediaIconColor %});"></i></div>
+              <div class="contact-buttons">
+                <div class="email-ico-wrap">
+                  <a href="mailto:{%:=emailAddress %}" title="{%:=emailTooltip %}" target="_blank" class="email-ico"><i class="fa {%:=emailIcon %}" style="font-size:1.3em;color:rgba({%:=emailIconColor %}) !important;"></i></a>
+              </div>
+                  <div class="social-m-ico-wrap">
+                      <a href="{%:=socialNetworkURL %}" title="{%:=socialMediaTooltip %}" target="_blank" class="social-m-ico"><i class="fab {%:=socialMediaIcon %}" style="font-size:1.3em;color:rgba({%:=socialMediaIconColor %}) !important;"></i></a>
+                  </div>
+                  <div class="phone-ico-wrap">
+                    <a href="tel:{%:=phoneNumber %}" title="{%:=phoneTooltip %}" target="_blank" class="phone-ico"><i class="fa {%:=phoneIcon %}" style="font-size:1.3em;color:rgba({%:=phoneIconColor %}) !important;"></i></a>
                 </div>
+              </div>
+
                 <p class="bottom-text">{%:= CurrentADP.Var("bottom_text")%}</p>
             </div>
         </div>
@@ -88,9 +107,10 @@ dim x = highestQuestion.LongCaption.Split("-")[2].Trim().ToNumber()
                         <div class="next-button"><span>{%= CurrentADP.Var("caption_next") %}</span><i class="fas fa-arrow-right"></i></div>
                         <input type="submit" name="Next" class="in-next-button" value="" />
                     </div>
-                    <p class="bottom-text-main">{%:= CurrentADP.Var("bottom_text")%}</p>
+                    <p class="bottom-text-main">{%:= CurrentADP.Var("bottom_text_mobile")%}</p>
                 </div>
             </askia-form>
+            <a class="resume-button" href="{%:= CurrentADP.Var("resume_button_link")%}">{%:= CurrentADP.Var("resume_button_text")%}</a>
         </div>
 
         <script>
@@ -128,9 +148,7 @@ dim x = highestQuestion.LongCaption.Split("-")[2].Trim().ToNumber()
                         document.getElementById(el.lastElementChild.attributes.for.value).click();
                     }
                 },false);
-                document.getElementsByClassName('social-m-ico')[0].addEventListener('click', function (event) {
-                    window.open('{%:= socialNetworkURL %}', '_blank');
-                });
+
                 {% If CurrentADP.Var("display_previous") = "yes" Then %}
                 document.querySelector('.previous-button').addEventListener("click", function(event){
                     document.querySelector('.in-previous-button').click();

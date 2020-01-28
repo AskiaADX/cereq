@@ -13,8 +13,7 @@
 		v1.0.4 - Reduced to 70px the height of header on mobile view
 		v1.0.5 - Fixed Theme color
    	    v1.0.6 - Infobulle changed
-		v1.0.9 - Added previous and next caption
-    ]]></description>
+		v1.0.9 - Added previous and next caption]]></description>
     <company>Askia</company>
     <author><![CDATA[Prabath Gamage<prabath@askia.com>]]></author>
     <site></site>
@@ -108,6 +107,38 @@
         <description><![CDATA[The color of the pip of selected menu item]]></description>
         <value><![CDATA[86, 86, 86, 1]]></value>
       </property>
+      <property xsi:type="standardProperty" id="bottom_text_color" name="Bottom text color" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgba">
+        <description><![CDATA[The color of the bottom text]]></description>
+        <value><![CDATA[89, 89, 89, 1]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="bottom_text" name="Bottom text" type="string" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[Text to be appeared on the bottom]]></description>
+        <value><![CDATA[Conformeacute;ment au code deacute;ontologie qui reacute;git sa profession,
+          Meacute;diameacute;trie garantit le strict anonymat de vos reacute;ponses qui ne seront utiliseacute;es qursquo;agrave; des fins statistiques.]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="bottom_text_mobile" name="Bottom text mobile" type="string" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[Text to be appeared on the bottom for mobile]]></description>
+        <value><![CDATA[Conformeacute;ment au code deacute;ontologie qui reacute;git sa profession,
+          Meacute;diameacute;trie garantit le strict anonymat de vos reacute;ponses qui ne seront utiliseacute;es qursquo;agrave; des fins statistiques.]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="bottom_text_font_size" name="Bottom text font size(px)" type="number" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[Bottom text font size]]></description>
+        <value><![CDATA[8]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="menu_top_margin" name="Menu top margin(px)" type="number" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[Top margin of the menu]]></description>
+        <value><![CDATA[0]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="resume_button_text" name="Resume button text" type="string" require="true" visible="true">
+        <description><![CDATA[Resume button text]]></description>
+        <value><![CDATA[Quitter et reprendre plus tard]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="resume_button_link" name="Resume button link" type="string" require="true" visible="true">
+        <description><![CDATA[Resume button link]]></description>
+        <value><![CDATA[]]></value>
+      </property>
+    </category>
+    <category id="contact" name="Contact">
       <property xsi:type="standardProperty" id="show_social_media_icon" name="Show social media icon" type="string" require="true" visible="true">
         <description><![CDATA[Show social media icon]]></description>
         <value><![CDATA[no]]></value>
@@ -116,7 +147,7 @@
           <option value="no" text="No" />
         </options>
       </property>
-      <property xsi:type="standardProperty" id="social_network_url" name="Social network URL" type="string" require="true">
+      <property xsi:type="standardProperty" id="social_network_url" name="Social network URL" type="string" require="true" visible="true">
         <description><![CDATA[Social network URL]]></description>
         <value><![CDATA[https://www.askia.com/]]></value>
       </property>
@@ -128,22 +159,69 @@
         <description><![CDATA[Social media icon background color]]></description>
         <value><![CDATA[234, 174, 49, 1]]></value>
       </property>
-      <property xsi:type="standardProperty" id="bottom_text_color" name="Bottom text color" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgba">
-        <description><![CDATA[The color of the bottom text]]></description>
-        <value><![CDATA[89, 89, 89, 1]]></value>
+      <property xsi:type="standardProperty" id="social_media_icon" name="Social media icon" type="string" require="false" visible="true">
+        <description><![CDATA[]]></description>
+        <value><![CDATA[fa-facebook-f]]></value>
       </property>
-      <property xsi:type="standardProperty" id="bottom_text" name="Bottom text" type="string" mode="dynamic" require="true" visible="true">
-        <description><![CDATA[Text to be appeared on the bottom]]></description>
-        <value><![CDATA[Conformeacute;ment au code deacute;ontologie qui reacute;git sa profession,
-          Meacute;diameacute;trie garantit le strict anonymat de vos reacute;ponses qui ne seront utiliseacute;es qursquo;agrave; des fins statistiques.]]></value>
+      <property xsi:type="standardProperty" id="social_media_tooltip" name="Social media tooltip" type="string" require="false" visible="true">
+        <description><![CDATA[]]></description>
+        <value><![CDATA[]]></value>
       </property>
-      <property xsi:type="standardProperty" id="bottom_text_font_size" name="Bottom text font size(px)" type="number" mode="dynamic" require="true" visible="true">
-        <description><![CDATA[Bottom text font size]]></description>
-        <value><![CDATA[8]]></value>
+      <property xsi:type="standardProperty" id="show_email_icon" name="Show e-mail icon" type="string" require="true" visible="true">
+        <description><![CDATA[Show e-mail icon]]></description>
+        <value><![CDATA[no]]></value>
+        <options>
+          <option value="yes" text="Yes" />
+          <option value="no" text="No" />
+        </options>
       </property>
-      <property xsi:type="standardProperty" id="menu_top_margin" name="Menu top margin(px)" type="number" mode="dynamic" require="true" visible="true">
-        <description><![CDATA[Top margin of the menu]]></description>
-        <value><![CDATA[0]]></value>
+      <property xsi:type="standardProperty" id="email_address" name="E-mail address" type="string" require="true" visible="true">
+        <description><![CDATA[E-mail address]]></description>
+        <value><![CDATA[generation2017@cereq.fr]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="email_icon_color" name="E-mail icon color" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgba">
+        <description><![CDATA[E-mail icon color]]></description>
+        <value><![CDATA[255, 255, 255, 1]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="email_icon_background_color" name="E-mail icon background color" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgba">
+        <description><![CDATA[E-mail icon background color]]></description>
+        <value><![CDATA[234, 174, 49, 1]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="email_icon" name="E-mail icon" type="string" require="false" visible="true">
+        <description><![CDATA[]]></description>
+        <value><![CDATA[fa-mail-bulk]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="email_tooltip" name="Email tooltip" type="string" require="false" visible="true">
+        <description><![CDATA[]]></description>
+        <value><![CDATA[]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="show_phone_icon" name="Show phone icon" type="string" require="true" visible="true">
+        <description><![CDATA[Show phone icon]]></description>
+        <value><![CDATA[no]]></value>
+        <options>
+          <option value="yes" text="Yes" />
+          <option value="no" text="No" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="phone_number" name="Phone number" type="string" require="true" visible="true">
+        <description><![CDATA[Phone number]]></description>
+        <value><![CDATA[0000000]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="phone_icon_color" name="Phone icon color" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgba">
+        <description><![CDATA[Phone icon color]]></description>
+        <value><![CDATA[255, 255, 255, 1]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="phone_icon_background_color" name="Phone icon background color" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgba">
+        <description><![CDATA[Phone icon background color]]></description>
+        <value><![CDATA[234, 174, 49, 1]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="phone_icon" name="Phone icon" type="string" require="false" visible="true">
+        <description><![CDATA[]]></description>
+        <value><![CDATA[fa-phone]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="phone_tooltip" name="Phone tooltip" type="string" require="false" visible="true">
+        <description><![CDATA[]]></description>
+        <value><![CDATA[]]></value>
       </property>
     </category>
   </properties>
